@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let currentWorkoutIndex = 0;
   let workouts = [];
 
-  fetch("https://fitness-hub-g8e1.onrender.com/workouts")
+  fetch("https://cofee.onrender.com/coffees")
       .then(response => {
           if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
