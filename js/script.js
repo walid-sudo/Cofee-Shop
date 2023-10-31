@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
 
   function displayWorkout(workout) {
-      const workoutContainer = document.getElementById("workout-container");
+      const workoutContainer = document.getElementById("coffee-container");
       workoutContainer.innerHTML = `
           <h2>${workout.name}</h2>
           <img class="workout-image" src="${workout.image}" alt="${workout.name}">
