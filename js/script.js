@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let currentCoffeeIndex = 0;
   let coffee = [];
 
-  fetch("https://coffee.alexflipnote.dev/uETY1LZBO70_coffee.jpg")
+  fetch("https://fitness-hub-g8e1.onrender.com/workouts")
       .then(response => {
           if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
