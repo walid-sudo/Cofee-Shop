@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-  let currentWorkoutIndex = 0;
-  let workouts = [];
+  let currentCoffeeIndex = 0;
+  let coffees = [];
 
   fetch("https://cofee.onrender.com/coffees")
       .then(response => {
@@ -14,25 +14,25 @@ document.addEventListener("DOMContentLoaded", function() {
               throw new Error("Invalid data format!");
           }
 
-          workouts = data;
-          displayWorkout(workouts[currentWorkoutIndex]);
+          coffees = data;
+          displayCoffee(coffees[currentCoffeeIndex]);
 
           // Add event listener for the "Next" button
           document.getElementById("next-button").addEventListener("click", function() {
-              currentWorkoutIndex = (currentWorkoutIndex + 1) % workouts.length;
-              displayWorkout(workouts[currentWorkoutIndex]);
+              currentCoffeeIndex = (currentCoffeeIndex + 1) % coffees.length;
+              displayCoffee(coffees[currentCoffeeIndex]);
           });
       })
       .catch(error => {
           console.error("Error fetching data:", error);
       });
 
-  function displayWorkout(workout) {
-      const workoutContainer = document.getElementById("coffee-container");
-      workoutContainer.innerHTML = `
-          <h2>${workout.name}</h2>
-          <img class="workout-image" src="${workout.image}" alt="${workout.name}">
-          <p>${workout.description}</p>
+  function displayCoffee(coffee) {
+      const coffeeContainer = document.getElementById("coffee-container");
+      coffeeContainer.innerHTML = `
+          <h2>${coffee.name}</h2>
+          <img class="coffee-image" src="${coffee.image}" alt="${coffee.name}">
+          <p>${coffee.description}</p>
       `;
   }
 });
